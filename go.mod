@@ -1,3 +1,3 @@
-module gitlab.com/blackiq-packages/go/rayid
+module github.com/BlackIQ/rayid-go
 
 go 1.22
