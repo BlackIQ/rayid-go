@@ -42,7 +42,7 @@ Full documentation: [rayid-go.amirhossein.info](https://rayid-go.amirhossein.inf
 | ------ | ---------------------------------------------- |
 | Module | https://pkg.go.dev/github.com/BlackIQ/rayid-go |
 | Source | https://github.com/BlackIQ/rayid-go            |
-| Docs   | https://rayid-py.amirhossein.info              |
+| Docs   | https://rayid-go.amirhossein.info              |
 
 ## License
 
