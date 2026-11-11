@@ -3,7 +3,7 @@
 ## Create a generator
 
 ```go
-import "gitlab.com/blackiq-packages/go/rayid"
+import "github.com/BlackIQ/rayid-go"
 
 ray, err := rayid.New(rayid.Lower)
 if err != nil {
@@ -56,7 +56,7 @@ package main
 import (
 	"fmt"
 
-	"gitlab.com/blackiq-packages/go/rayid"
+	"github.com/BlackIQ/rayid-go"
 )
 
 func main() {

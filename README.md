@@ -3,7 +3,7 @@
 Generate short IDs for logs, events, and traces.
 
 ```bash
-go get gitlab.com/blackiq-packages/go/rayid@latest
+go get github.com/BlackIQ/rayid-go@latest
 ```
 
 ```go
@@ -12,7 +12,7 @@ package main
 import (
 	"fmt"
 
-	"gitlab.com/blackiq-packages/go/rayid"
+	"github.com/BlackIQ/rayid-go"
 )
 
 func main() {
@@ -34,14 +34,15 @@ func main() {
 
 ## Docs
 
-Full documentation: [rayid-go.docs.amirhossein.info](https://rayid-go.docs.amirhossein.info)
+Full documentation: [rayid-go.amirhossein.info](https://rayid-go.amirhossein.info)
 
 ## Links
 
-|        |                                                                                                            |
-| ------ | ---------------------------------------------------------------------------------------------------------- |
-| Module | [pkg.go.dev/gitlab.com/blackiq-packages/go/rayid](https://pkg.go.dev/gitlab.com/blackiq-packages/go/rayid) |
-| Source | [https://gitlab.com/blackiq-packages/go/rayid](https://gitlab.com/blackiq-packages/go/rayid)               |
+| Title  | URL                                            |
+| ------ | ---------------------------------------------- |
+| Module | https://pkg.go.dev/github.com/BlackIQ/rayid-go |
+| Source | https://github.com/BlackIQ/rayid-go            |
+| Docs   | https://rayid-py.amirhossein.info              |
 
 ## License
 

@@ -8,7 +8,7 @@ package main
 import (
 	"fmt"
 
-	"gitlab.com/blackiq-packages/go/rayid"
+	"github.com/BlackIQ/rayid-go"
 )
 
 func main() {
@@ -26,10 +26,10 @@ func main() {
 }
 ```
 
-|        |                                                                                                            |
-| ------ | ---------------------------------------------------------------------------------------------------------- |
-| Module | [pkg.go.dev/gitlab.com/blackiq-packages/go/rayid](https://pkg.go.dev/gitlab.com/blackiq-packages/go/rayid) |
-| Source | [https://gitlab.com/blackiq-packages/go/rayid](https://gitlab.com/blackiq-packages/go/rayid)               |
+|        |                                                |
+| ------ | ---------------------------------------------- |
+| Module | https://pkg.go.dev/github.com/BlackIQ/rayid-go |
+| Source | https://github.com/BlackIQ/rayid-go            |
 
 ## Next
 

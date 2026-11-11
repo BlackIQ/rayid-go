@@ -1,5 +1,5 @@
 # Install
 
 ```bash
-go get gitlab.com/blackiq-packages/go/rayid@latest
+go get github.com/BlackIQ/rayid-go@latest
 ```
