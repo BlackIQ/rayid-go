@@ -2,53 +2,94 @@
 
 ## Create a generator
 
-```javascript
-import RayID from "rayid";
+```go
+import "gitlab.com/blackiq-packages/go/rayid"
 
-const ray = new RayID("lower");
+ray, err := rayid.New(rayid.Lower)
+if err != nil {
+    panic(err)
+}
+```
+
+Or use the panic version:
+
+```go
+ray := rayid.MustNew(rayid.Lower)
 ```
 
 ### Types
 
-| Type               | Characters                |
-| ------------------ | ------------------------- |
-| `digit`            | `0-9`                     |
-| `lower`            | `a-z`                     |
-| `upper`            | `A-Z`                     |
-| `symbol`           | common symbols            |
-| _(omit / unknown)_ | all of the above combined |
+| Type    | Characters                |
+| ------- | ------------------------- |
+| `digit` | `0-9`                     |
+| `lower` | `a-z`                     |
+| `upper` | `A-Z`                     |
+| `all`   | all of the above combined |
 
-```javascript
-const digits = new RayID("digit");
-const symbols = new RayID("symbol");
-const mixed = new RayID(); // all character sets
+```go
+digits := rayid.MustNew(rayid.Digit)
+letters := rayid.MustNew(rayid.Lower)
+mixed   := rayid.MustNew(rayid.All)
 ```
 
 ## Generate an ID
 
-```javascript
-ray.gen(12);
+```go
+id, err := ray.Gen(12)
+
+if err != nil {
+    panic(err)
+}
 ```
 
-If the result would start with `0`, generation is retried so the first character is non-zero.
+Or:
 
-```javascript
-import RayID from "rayid";
+```go
+id := ray.MustGen(12)
+```
 
-console.log(new RayID("digit").gen(10));
-console.log(new RayID("lower").gen(10));
-console.log(new RayID("symbol").gen(10));
-console.log(new RayID().gen(16));
+For the `digit` type, the first character is never `0`.
+
+```go
+package main
+
+import (
+	"fmt"
+
+	"gitlab.com/blackiq-packages/go/rayid"
+)
+
+func main() {
+	fmt.Println(rayid.MustNew(rayid.Digit).MustGen(10))
+	fmt.Println(rayid.MustNew(rayid.Lower).MustGen(10))
+	fmt.Println(rayid.MustNew(rayid.Upper).MustGen(10))
+	fmt.Println(rayid.MustNew(rayid.All).MustGen(16))
+}
 ```
 
 ## API
 
-### `new RayID(type?)`
+### `New(t Type) (*RayID, error)`
 
-| Argument | Description                                          |
-| -------- | ---------------------------------------------------- |
-| `type`   | `digit`, `lower`, `upper`, `symbol`, or omit for all |
+| Argument | Description                         |
+| -------- | ----------------------------------- |
+| `t`      | `Digit`, `Lower`, `Upper`, or `All` |
 
-### `gen(length) → string`
+Returns an error if the type is invalid.
+
+### `MustNew(t Type) *RayID`
+
+Same as `New`, but panics on invalid type.
+
+### `Gen(length int) (string, error)`
 
 Returns a string of the given length from the selected alphabet.
+Returns an error if `length <= 0`.
+
+### `MustGen(length int) string`
+
+Same as `Gen`, but panics on error.
+
+### `Characters() string`
+
+Returns the character set used by this generator.
