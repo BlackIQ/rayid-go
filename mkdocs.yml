@@ -1,0 +1,38 @@
+site_name: RayID Docs
+site_description: Official RayID Package for Go
+site_url: https://rayid-go.docs.amirhossein.info
+
+repo_url: https://gitlab.com/blackiq-packages/go/rayid
+repo_name: amirhossein/rayid-go
+
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: blue
+      toggle:
+        icon: material/brightness-7
+        name: Dark mode
+    - scheme: slate
+      primary: blue
+      toggle:
+        icon: material/brightness-4
+        name: Light mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - content.code.copy
+    - search.suggest
+
+nav:
+  - Home: index.md
+  - Learn:
+    - Install: learn/install.md
+    - Usage: learn/usage.md
+
+markdown_extensions:
+  - tables
+  - admonition
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
