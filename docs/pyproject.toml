@@ -2,12 +2,9 @@
 name = "rayid-go-docs"
 version = "0.1.0"
 description = "Generate RayIDs for tracking logs, posts, and events"
-readme = "README.md"
 requires-python = ">=3.13"
-dependencies = []
 
 [dependency-groups]
 dev = [
-    "mkdocs>=1.6.1",
-    "mkdocs-material>=9.8.0",
+    "zensical>=0.1.0",
 ]
